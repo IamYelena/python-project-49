@@ -21,16 +21,16 @@ def generate_question():
     operator = choice(["+", "-", "*"])
     print(f'Question: {int1} {operator} {int2}')
     user_answer = prompt.string("Your answer:  ")
-    if (operator == "+"):
+    if operator == "+":
         right_answer = int1 + int2
 
-    if (operator == "-"):
+    if operator == "-":
         right_answer = int1 - int2
 
-    if (operator == "*"):
+    if operator == "*":
         right_answer = int1 * int2
     print_result(user_answer,right_answer)
-    if (str(user_answer) == str(right_answer)):
+    if str(user_answer) == str(right_answer):
         return True
     else:
         return False
