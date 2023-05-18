@@ -5,12 +5,11 @@
 
 Hello! This repository is a Hexlet study project. It consists of 5 console games for brain. There are 3 questions in every game. Incorrect answer ends the game.
 
-### Installation
+## Installation
 
-```
+```bash
 git clone git@github.com:IamYelena/python-project-49.git
 cd python-project-49/
-# install poetry
 make install
 ```
 
@@ -36,12 +35,12 @@ Use `brain-gcd` to start the game.
 
 ## Game 'The progression'
 
-Use ```brain-progression``` to start the game.
+Use `brain-progression` to start the game.
 
 [![asciicast](https://asciinema.org/a/584880.svg)](https://asciinema.org/a/584880)
 
 ## Game 'Prime or not'
 
-Use ```brain-prime``` to start the game.
+Use `brain-prime` to start the game.
 
 [![asciicast](https://asciinema.org/a/585223.svg)](https://asciinema.org/a/585223)
