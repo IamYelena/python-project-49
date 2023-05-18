@@ -1,7 +1,9 @@
-# "Brain Games"
+# 'Brain Games'
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/IamYelena/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/IamYelena/python-project-49/actions)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/23583eb578587c1b3c43/maintainability)](https://codeclimate.com/github/IamYelena/python-project-49/maintainability)
 
 Hello! This repository is a Hexlet study project. It consists of 5 console games for brain. There are 3 questions in every game. Incorrect answer ends the game.
 
