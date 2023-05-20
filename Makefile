@@ -29,4 +29,4 @@ publish:
 	poetry publish --dry-run
 
 make lint:
-	poetry run flake8 --max-line-length=120 brain_games
+	poetry run flake8 brain_games

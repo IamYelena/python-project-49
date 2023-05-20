@@ -43,4 +43,5 @@ def print_result(user_answer, right_answer):
         print("Correct!")
     else:
         print(f'Your answer:  {user_answer}')
-        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{right_answer}'. ")
+        print(f"'{user_answer}' is wrong answer ;(."
+              " Correct answer was '{right_answer}'. ")
