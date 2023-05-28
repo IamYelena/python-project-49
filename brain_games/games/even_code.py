@@ -1,40 +1,32 @@
 import prompt
 
 from random import randint
+from brain_games.engine.command import proccessing_result
+
+COUNT_OF_QUESTION = 3
+TASK = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def generate_questions():
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    res1 = generate_question()
-    if res1 is False:
-        return False
-    res2 = generate_question()
-    if res2 is False:
-        return False
-    res3 = generate_question()
-    if res3 is False:
-        return False
+    print(TASK)
+    for i in range(COUNT_OF_QUESTION):
+        res1 = generate_question()
+        if res1 is False:
+            return False
     return True
 
 
 def generate_question():
     v = randint(0, 100)
     print(f"Question: {v}")
-    answer = ''
-    while answer == '':
-        answer = prompt.string('Your answer:  ')
+    user_answer = ''
+    while user_answer == '':
+        user_answer = prompt.string('Your answer:  ')
 
-    r_answer = ''
-    if answer == "yes":
-        r_answer = "no"
-    if answer == "no":
-        r_answer = "yes"
-    if v % 2 == 0 and answer == "yes":
-        print("Correct!")
-        return True
-    if v % 2 != 0 and answer == "no":
-        print("Correct!")
-        return True
-    r = f"'{answer} is wrong answer ;(. Correct answer was '{r_answer}'."
-    print(r)
-    return False
+    right_answer = ''
+    if v % 2 == 0:
+        right_answer = 'yes'
+    if v % 2 != 0:
+        right_answer = 'no'
+    result = proccessing_result(user_answer, right_answer)
+    return result

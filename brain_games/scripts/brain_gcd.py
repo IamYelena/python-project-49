@@ -1,20 +1,16 @@
+#!/usr/bin/env python3
+
 from brain_games.games.gcd_code import generate_questions
 from brain_games.cli import welcome_user
-
-
-def welcome():
-    print("Welcome to the Brain Games!")
+from brain_games.engine.command import welcome, final_message
 
 
 def main():
     welcome()
     name = welcome_user()
-
     result = generate_questions()
-    if result is True:
-        print("Congratulations, " + name + "!")
-    else:
-        print("Let's try again, " + name + "!")
+    final_message(result, name)
+    return
 
 
 if __name__ == '__main__':
