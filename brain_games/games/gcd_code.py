@@ -6,6 +6,8 @@ from brain_games.engine.command import proccessing_result
 
 COUNT_OF_QUESTION = 3
 TASK = "Find the greatest common divisor of given numbers."
+MIN_NUMBER = 1
+MAX_NUMBER = 100
 
 
 def generate_questions():
@@ -18,8 +20,8 @@ def generate_questions():
 
 
 def generate_question():
-    int1 = randint(1, 100)
-    int2 = randint(1, 100)
+    int1 = randint(MIN_NUMBER, MAX_NUMBER)
+    int2 = randint(MIN_NUMBER, MAX_NUMBER)
     print(f'Question: {int1} {int2}')
     user_answer = prompt.string("Your answer:  ")
     right_answer = math.gcd(int1, int2)

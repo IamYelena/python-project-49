@@ -5,6 +5,8 @@ from brain_games.engine.command import proccessing_result
 
 COUNT_OF_QUESTION = 3
 TASK = "What is the result of the expression?"
+MIN_NUMBER = 1
+MAX_NUMBER = 30
 
 
 def generate_questions():
@@ -17,8 +19,8 @@ def generate_questions():
 
 
 def generate_question():
-    int1 = randint(1, 30)
-    int2 = randint(1, 30)
+    int1 = randint(MIN_NUMBER, MAX_NUMBER)
+    int2 = randint(MIN_NUMBER, MAX_NUMBER)
     operator = choice(["+", "-", "*"])
     print(f'Question: {int1} {operator} {int2}')
     user_answer = prompt.string("Your answer:  ")

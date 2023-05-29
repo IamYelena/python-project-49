@@ -5,6 +5,8 @@ from brain_games.engine.command import proccessing_result
 
 COUNT_OF_QUESTION = 3
 TASK = 'Answer "yes" if the number is even, otherwise answer "no".'
+MIN_NUMBER = 0
+MAX_NUMBER = 100
 
 
 def generate_questions():
@@ -17,7 +19,7 @@ def generate_questions():
 
 
 def generate_question():
-    v = randint(0, 100)
+    v = randint(MIN_NUMBER, MAX_NUMBER)
     print(f"Question: {v}")
     user_answer = ''
     while user_answer == '':
