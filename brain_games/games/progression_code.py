@@ -1,12 +1,13 @@
 import prompt
 
 from random import randint
-from brain_games.engine.command import proccessing_result
+from brain_games.engine.command import proccessing_result, run_game
 
 QUESTIONS_COUNT = 3
 TASK = "What number is missing in the progression?"
 MIN_NUMBER = 1
 MAX_NUMBER = 10
+
 
 def generate_questions():
     print(TASK)

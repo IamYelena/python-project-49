@@ -1,6 +1,6 @@
 import prompt
 from random import randint
-from brain_games.engine.command import proccessing_result
+from brain_games.engine.command import proccessing_result, run_game
 
 
 QUESTIONS_COUNT = 3

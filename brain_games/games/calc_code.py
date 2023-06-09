@@ -1,7 +1,7 @@
 import prompt
 
 from random import randint, choice
-from brain_games.engine.command import proccessing_result,run_game
+from brain_games.engine.command import proccessing_result, run_game
 
 QUESTIONS_COUNT = 3
 TASK = "What is the result of the expression?"

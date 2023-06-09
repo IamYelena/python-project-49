@@ -22,12 +22,10 @@ def proccessing_result(user_answer, right_answer):
     else:
         return False
 
+
 def run_game(QUESTIONS_COUNT, generate_question):
     for i in range(QUESTIONS_COUNT):
         res1 = generate_question()
         if res1 is False:
             return False
     return True
-
-
-
