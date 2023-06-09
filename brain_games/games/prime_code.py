@@ -3,17 +3,16 @@ from random import randint
 from brain_games.engine.command import proccessing_result
 
 
-COUNT_OF_QUESTION = 3
+QUESTIONS_COUNT = 3
+MAX_NUMBER = 100
+MIN_NUMBER = 1
 TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def generate_questions():
     print(TASK)
-    for i in range(COUNT_OF_QUESTION):
-        res1 = generate_question()
-        if res1 is False:
-            return False
-    return True
+    res = run_game(QUESTIONS_COUNT, generate_question)
+    return res
 
 
 def is_prime(number):
@@ -26,7 +25,7 @@ def is_prime(number):
 
 
 def generate_question():
-    number = randint(1, 100)
+    number = randint(MIN_NUMBER, MAX_NUMBER)
     prime = is_prime(number)
     right_answer = "no"
     if prime:

@@ -1,21 +1,18 @@
 import prompt
 
 from random import randint, choice
-from brain_games.engine.command import proccessing_result
+from brain_games.engine.command import proccessing_result,run_game
 
-COUNT_OF_QUESTION = 3
+QUESTIONS_COUNT = 3
 TASK = "What is the result of the expression?"
 MIN_NUMBER = 1
 MAX_NUMBER = 30
 
 
 def generate_questions():
-    print("What is the result of the expression?")
-    for i in range(COUNT_OF_QUESTION):
-        res1 = generate_question()
-        if res1 is False:
-            return False
-    return True
+    print(TASK)
+    res = run_game(QUESTIONS_COUNT, generate_question)
+    return res
 
 
 def generate_question():

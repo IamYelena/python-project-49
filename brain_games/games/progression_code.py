@@ -3,25 +3,23 @@ import prompt
 from random import randint
 from brain_games.engine.command import proccessing_result
 
-COUNT_OF_QUESTION = 3
+QUESTIONS_COUNT = 3
 TASK = "What number is missing in the progression?"
-
+MIN_NUMBER = 1
+MAX_NUMBER = 10
 
 def generate_questions():
     print(TASK)
-    for i in range(COUNT_OF_QUESTION):
-        res1 = generate_question()
-        if res1 is False:
-            return False
-    return True
+    res = run_game(QUESTIONS_COUNT, generate_question)
+    return res
 
 
 def generate_question():
-    start_number = randint(1, 10)
-    step = randint(1, 10)
-    number_hidden_element = randint(0, 9)
+    start_number = randint(MIN_NUMBER, MAX_NUMBER)
+    step = randint(MIN_NUMBER, MAX_NUMBER)
+    number_hidden_element = randint(MIN_NUMBER - 1, MAX_NUMBER - 1)
     array = []
-    for number in range(0, 10):
+    for number in range(MIN_NUMBER - 1, MAX_NUMBER):
         element = start_number + number * step
         array.append(element)
 
