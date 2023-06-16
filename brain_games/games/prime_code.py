@@ -1,22 +1,13 @@
-import prompt
+
 from random import randint
-from brain_games.engine.command import proccessing_result, run_game
 
 
-QUESTIONS_COUNT = 3
 MAX_NUMBER = 100
 MIN_NUMBER = 1
-TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-
-
-def generate_questions():
-    print(TASK)
-    res = run_game(QUESTIONS_COUNT, generate_question)
-    return res
 
 
 def is_prime(number):
-    if number == 1:
+    if number == 1 or number == 0:
         return False
     for i in range(2, number - 1):
         if (number % i == 0):
@@ -27,14 +18,10 @@ def is_prime(number):
 def generate_question():
     number = randint(MIN_NUMBER, MAX_NUMBER)
     prime = is_prime(number)
-    right_answer = "no"
+    right_answer = 'no'
     if prime:
-        right_answer = "yes"
+        right_answer = 'yes'
 
-    print(f'Question: {number}')
-    user_answer = ''
-    while user_answer == '':
-        user_answer = prompt.string('Your answer:  ')
+    question_string = f'Question: {number}'
 
-    result = proccessing_result(user_answer, right_answer)
-    return result
+    return (question_string, right_answer)
