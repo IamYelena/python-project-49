@@ -1,5 +1,6 @@
 
 from random import randint
+TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 MAX_NUMBER = 100
@@ -22,6 +23,6 @@ def generate_question():
     if prime:
         right_answer = 'yes'
 
-    question_string = f'Question: {number}'
+    question_string = f': {number}'
 
     return (question_string, right_answer)
