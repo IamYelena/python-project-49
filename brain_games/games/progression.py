@@ -5,32 +5,34 @@ TASK = 'What number is missing in the progression?'
 
 MIN_NUMBER = 1
 MAX_NUMBER = 10
+MIN_STEP = 1
+MAX_STEP = 10
 
 
 def generate_progression(start_number, step):
-    array = []
+    progression = []
     for number in range(MIN_NUMBER - 1, MAX_NUMBER):
         element = + number * step
-        array.append(element)
-    return array
+        progression.append(element)
+    return progression
 
 
-def get_progression_string(array):
+def get_progression_string(progression):
     query_string = ''
-    for element in array:
-        query_string = query_string + str(element) + ' '
+    for element in progression:
+        query_string = f"{query_string}{element} "
     query_string = query_string.strip()
     return query_string
 
 
 def generate_question():
     start_number = randint(MIN_NUMBER, MAX_NUMBER)
-    step = randint(MIN_NUMBER, MAX_NUMBER)
-    number_hidden_element = randint(MIN_NUMBER - 1, MAX_NUMBER - 1)
-    array = generate_progression(start_number, step)
-    hidden_element = array[number_hidden_element]
+    step = randint(MIN_STEP, MAX_STEP)
+    hidden_element_index = randint(MIN_NUMBER - 1, MAX_NUMBER - 1)
+    progression = generate_progression(start_number, step)
+    hidden_element = progression[hidden_element_index]
     right_answer = hidden_element
-    array[number_hidden_element] = '..'
-    progression_string = get_progression_string(array)
-    question_string = f': {progression_string}'
+    progression[hidden_element_index] = '..'
+    progression_string = get_progression_string(progression)
+    question_string = f'{progression_string}'
     return (question_string, right_answer)

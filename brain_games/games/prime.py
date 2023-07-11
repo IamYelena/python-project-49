@@ -18,11 +18,10 @@ def is_prime(number):
 
 def generate_question():
     number = randint(MIN_NUMBER, MAX_NUMBER)
-    prime = is_prime(number)
     right_answer = 'no'
-    if prime:
+    if is_prime(number):
         right_answer = 'yes'
 
-    question_string = f': {number}'
+    question_string = f'{number}'
 
     return (question_string, right_answer)

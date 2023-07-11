@@ -12,7 +12,7 @@ def is_even(number):
 
 def generate_question():
     number = randint(MIN_NUMBER, MAX_NUMBER)
-    question_string = f': {number}'
+    question_string = f'{number}'
     right_answer = ''
     if is_even(number):
         right_answer = 'yes'
